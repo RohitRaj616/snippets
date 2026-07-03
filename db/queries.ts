@@ -20,8 +20,7 @@ export async function getSnippet(id: number, preview: boolean = false) {
           eq(snippetTable.id, id),
           or(
             eq(snippetTable.visibility, "public"),
-            eq(snippetTable.userId, userId ?? ""),
-            preview ? eq(snippetTable.visibility, "private") : undefined
+            eq(snippetTable.userId, userId ?? ""),      
           )
         )
       )
